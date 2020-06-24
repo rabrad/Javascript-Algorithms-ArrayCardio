@@ -107,8 +107,8 @@ const data = [
 ];
 
 /* start with empty object.
-   Every time we loop throw the array, we see if the item has a value > 0
-   if so, we increment its entry on the initial object.
+   Every time we loop through the array, we see if the item 
+   has a value > 0 if so, we increment its entry on the initial object.
 */
 const transportation = data.reduce((obj, item) => {
   if (!obj[item]) {
