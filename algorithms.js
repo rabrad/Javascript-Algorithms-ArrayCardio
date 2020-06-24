@@ -11,11 +11,7 @@ console.log(convertToF(30));
  ex. 5! = 5x4x3x2x1 = 120 */
 
 function factorize(num) {
-  if (num === 0 || num === 1) {
-    return 1;
-  } else {
-    return num * factorize(num - 1);
-  }
+  return num === 0 || num === 1 ? 1 : num * factorize(num - 1);
 }
 console.log(factorize(5));
 
@@ -126,3 +122,17 @@ function titleCase(str) {
     .join(' ');
 }
 console.log(titleCase("I'm a little tea pot"));
+
+module.exports = {
+  convertToF,
+  factorize,
+  reverseString,
+  findLongestWordLength,
+  largestOfFour,
+  confirmEnding,
+  repeatStringNumTimes,
+  truncateString,
+  findElement,
+  booWho,
+  titleCase,
+};
