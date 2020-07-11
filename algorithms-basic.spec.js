@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const algorithms = require('./algorithms');
+const algorithms = require('./algorithms-basic');
 
 describe('algorithms', () => {
   describe('convert C To F', () => {

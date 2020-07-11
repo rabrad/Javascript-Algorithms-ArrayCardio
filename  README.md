@@ -1,4 +1,9 @@
-Algorithms: [Source](https://www.freecodecamp.org) -
-Array Cardio: [Source](https://github.com/wesbos/JavaScript30/tree/master/04%20-%20Array%20Cardio%20Day%201)
+Algorithms and Js Cardio
 
-Include unit testing using **mocha** as JavaScript test framework & **Chai** as an assertion library
+`Sources`:
+
+- Free code camp
+- Wes Bos
+- Brad Traversy
+
+Includes unit testing using **mocha** as JavaScript test framework & **Chai** as an assertion library
