@@ -11,7 +11,7 @@ function sumAll(arr) {
   return ((max - min + 1) * (max + min)) / 2;
 }
 
-sumAll([1, 4]);
+console.log(sumAll([1, 4]));
 
 /** 02 
   Diff Two Arrays
@@ -114,14 +114,99 @@ function translatePigLatin(str) {
       ++consonants;
     } else break;
   }
-
   // assign the logic if there is one or more consonants.
   str =
     consonants > 0
-      ? str.substring(consonants) + str.substring(0, consonants) + 'ay'
+      ? str.substring(consonants) +
+        str.substring(0, consonants) +
+        'ay'
       : str + 'way';
 
   return str;
 }
 
 console.log(translatePigLatin('glove'));
+
+/* 07 
+  Search and Replace
+  1st arg. is the sentence to perform the search and replace on.
+  2nd arg. word that you will be replacing (before).
+  3ed arg. will be replacing the second argument with (after).
+*/
+
+function myReplace(str, before, after) {
+  if (before[0] === before[0].toUpperCase()) {
+    after = after[0].toUpperCase() + after.slice(1);
+  }
+
+  return str.replace(before, after);
+}
+
+console.log(
+  myReplace(
+    'A quick brown fox jumped over the lazy dog',
+    'jumped',
+    'leaped'
+  )
+);
+
+/* 08
+  DNA Pairing
+  Base pairs are a pair of AT and CG.
+  For the input ACG, return [["A", "T"], ["C","G"],["G", "C"]]
+*/
+function pairElement(str) {
+  const helper = (elm) => {
+    if (elm === 'A') return 'T';
+    else if (elm === 'T') return 'A';
+    else if (elm === 'C') return 'G';
+    else if (elm === 'G') return 'C';
+  };
+
+  return str.split('').map((pair) => {
+    let newPair = [pair, helper(pair)];
+
+    return newPair;
+  });
+}
+console.log(pairElement('GCG'));
+
+/* 09
+  Missing Letters  
+  Find the missing letter in the passed letter range and return it.
+*/
+
+function fearNotLetter(str) {
+  for (let i = 0; i < str.length; i++) {
+    const code = str.charCodeAt(i);
+
+    if (code !== str.charCodeAt(0) + i) {
+      return String.fromCharCode(code - 1);
+    }
+  }
+  return undefined;
+}
+console.log(fearNotLetter('abce'));
+
+/** 10 
+  Sorted UnionPassed
+  Write a function that takes two or more arrays and returns 
+  a new array of unique values in the order of the original provided arrays.
+*/
+
+function uniteUnique(arr) {
+  const allArrays = [...arguments];
+  const output = [];
+
+  for (let arr of allArrays) {
+    for (let num of arr) {
+      if (!output.includes(num)) {
+        output.push(num);
+      }
+    }
+  }
+
+  return output;
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
